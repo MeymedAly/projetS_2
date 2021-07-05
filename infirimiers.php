@@ -40,7 +40,7 @@ include('includes/navbar.php');
         <div class="table-responsive">
         <?php
          $conn = mysqli_connect("localhost","root","","projet");
-         $query= "SELECT * FROM docteur ";
+         $query= "SELECT * FROM infirmier ";
          $query_run = mysqli_query($conn,$query);
 
       ?>
@@ -52,8 +52,10 @@ include('includes/navbar.php');
                         <th>Prénom</th>
                         <th>Adresse</th>
                         <th>Numéro Téléphone</th>
-                        <th>Spécialité</th>
-                        <th>Spécialité</th>
+                        <th>Rotation</th>
+                        <th>Salaire</th>
+                        <th>Service</th>
+                        <th colspan="2">Action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -63,8 +65,10 @@ include('includes/navbar.php');
                         <th>Prénom</th>
                         <th>Adresse</th>
                         <th>Numéro Téléphone</th>
-                        <th>Spécialité</th>
-                        <th>Spécialité</th>
+                        <th>Rotation</th>
+                        <th>Salaire</th>
+                        <th>Service</th>
+                        <th colspan="2">Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -75,13 +79,27 @@ include('includes/navbar.php');
                 {
                  ?>
                     <tr>
-                        <td><?php echo $row['numeroD'] ?></td>
+                        <td><?php echo $row['numeroI'] ?></td>
                         <td><?php echo $row['nom'] ?></td>
                         <td><?php echo $row['prenom'] ?></td>
                         <td><?php echo $row['adresse'] ?></td>
-                        <td><?php echo $row['NumeroTele'] ?></td>
-                        <td><?php echo $row['specialite'] ?></td>
-                        <td><?php echo $row['specialite'] ?></td>
+                        <td><?php echo $row['numeroTele'] ?></td>
+                        <td><?php echo $row['rotation'] ?></td>
+                        <td><?php echo $row['salaire'] ?></td>
+                        <td><?php echo $row['service'] ?></td>
+                        <td>
+                          <form align="center" title="Suprimer" action="sup.php" method="POST">
+                            <input type="hidden" name="sup_infir" value="<?php echo $row['numeroI']?>">
+                            <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
+                            <button type="submit" name="sup_inf_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                          </form>
+                        </td>
+                        <td>
+                          <form align="center"  action="reg_sup.php" method="POST">
+                            <input type="hidden" name="modif_in" value="<?php echo $row['numeroI'] ?>">
+                            <button type="submit" name="modif_btn" class="btn btn-success"><i class="fi fi-pencil-square"></i></button>
+                          </form>
+                        </td>
                     </tr>
 
                     <?php

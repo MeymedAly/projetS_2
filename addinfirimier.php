@@ -27,49 +27,37 @@ include('includes/navbar.php');
                             </div>
                             <form class="user"  action="ajoutInfirimier.php" method="POST">
                             <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" name="numeroI"  class="form-control" id="numero"
                                             placeholder="Numéro">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <input type="number" name="numeroTel"  class="form-control" id="numeroTel"
                                             placeholder="Numéro Téléphone">
                                     </div>
-                                    <div class="col-sm-4">
-                                        <input type="number" name="numeroSalle"  class="form-control" id="numeroTel"
-                                            placeholder="Numéro Salle">
-                                    </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" name="nom"  class="form-control" id="nom"
                                             placeholder="Nom">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <input type="text" name="prenom"  class="form-control" id="prenom"
                                             placeholder="Prénom">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <input type="number" name="numerolit"  class="form-control" id="prenom"
-                                            placeholder="Numéro Lit">
-                                    </div>
+                                    </div>                                    
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" name="rotation"  class="form-control"
                                             id="rotation" placeholder="Rotation">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-5">
                                         <input type="text" name="salaire"  class="form-control"
                                             id="salaire" placeholder="Salaire">
                                     </div>
-                                    <div class="col-sm-4">
-                                        <input type="text" name="soigner"  class="form-control"
-                                            id="soignerPar" placeholder="Soigner Par Dr.">
-                                    </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" name="adresse"  class="form-control" id="adresse"
                                             placeholder="Adresse">
                                     </div>
@@ -82,8 +70,8 @@ include('includes/navbar.php');
                                         if (mysqli_num_rows($directeur_run) >0)
                                          {
                                        ?>
-                                    <div class="col-sm-4">
-                                       <select name="directeur" id="" placeholder="service" class="form-control">
+                                    <div class="col-sm-5">
+                                       <select name="service" id="" placeholder="service" class="form-control">
                                     <option value="">choisisser le service</option>
                                     <?php
                                     foreach($directeur_run as $row)

@@ -1,9 +1,9 @@
 <?php
 session_start();
 $conn = mysqli_connect("localhost","root","","projet");
-if(isset($_POST['ajoutbtnDr']))
+if(isset($_POST['ajoutbtnIn']))
 {
-    $numeroI = $_POST['numero'];
+    $numeroI = $_POST['numeroI'];
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $adresse = $_POST['adresse'];
@@ -25,13 +25,13 @@ if(isset($_POST['ajoutbtnDr']))
             {
                 //echo"les donnes sont sauvgarder";
                $_SESSION['success'] = "Infirmier Ajouter";
-               header('Location: docteurs.php');
+               header('Location:infirimiers.php');
             }
             else
             {
                 //echo"les donnes ne sont pas sauvgarder";
                 $_SESSION['status'] = "Infirmier n'est pas Ajouter";
-                header('Location: docteurs.php');
+                header('Location:infirimiers.php');
 
             }
         
