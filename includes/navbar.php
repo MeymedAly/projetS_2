@@ -4,7 +4,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
     <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-hospital"></i>
+        <i class="fas fa-hospital fa-2x text-gray-305"></i>
     </div>
     <div class="sidebar-brand-text mx-3">Hopital NKTT</div>
 </a>
@@ -15,8 +15,8 @@
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="index.php">
-        <i class="fas fa-home"></i>
-        <span>Menu</span></a>
+    <i class="fas fa-laptop-house"></i>
+        <span>Accueil</span></a>
 </li>
 
 <!-- Divider -->
@@ -73,7 +73,7 @@
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <a class="nav-link" href="listeMalade.php">
-        <i class="fas fa-fw fa-table"></i>
+    <i class="fas fa-user-injured"></i>
         <span>Les Malade</span></a>
 </li>
 
