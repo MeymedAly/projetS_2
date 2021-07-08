@@ -121,7 +121,7 @@ include('includes/navbar.php');
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        
-                        <th colspan="2">Action</th>
+                        <th colspan="3">Action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -129,7 +129,7 @@ include('includes/navbar.php');
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        
-                        <th colspan="2">Action </th>
+                        <th colspan="3">Action </th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -145,14 +145,20 @@ include('includes/navbar.php');
                         <td><?php echo $row['service'] ?></td>
                         <td>
               <form align="center" title="Suprimer" action="sup.php" method="POST">
-                <input type="hidden" name="sup_id" value="<?php //echo $row['id']?>">
+                <input type="hidden" name="sup_id" value="<?php echo $row['numeroS']?>">
                 <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
                 <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
             <td>
+              <form align="center"  action="salle_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input_salle" value="<?php echo $row['numeroS'] ?>">
+                <button type="submit" name="modifier_btn_salle" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+              </form>
+            </td>
+            <td>
               <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php //echo $row['id'] ?>">
+                <input type="hidden" name="modifier_input" value="<?php echo $row['numeroS'] ?>">
                 <button type="submit" name="modifier_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
               </form>
             </td>

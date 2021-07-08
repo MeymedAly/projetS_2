@@ -58,4 +58,29 @@ if (isset($_POST['btn_infir_modifier'])) {
 }
 
 
+
+
+
+//modifier salle
+if (isset($_POST['btn_salle_modifier'])) {
+
+    $id            = $_POST['modif_id'];
+    $nombreLits   = $_POST['nombreLits'];
+    $service      = $_POST['service'];
+    
+
+
+    $quary = "UPDATE utilisateur SET nombreLits = '$nombreLits' , service = '$service'  WHERE numeroS='$id'";
+    $quary_run = mysqli_query($conn,$quary);
+
+    if ($quary_run) {
+        $_SESSION['success'] = "Les donnees sont modifiers";
+        header('Location:salle.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Les donnees n'est pas modifiers";
+        header('Location:salle.php'); 
+    }
+}
 ?>

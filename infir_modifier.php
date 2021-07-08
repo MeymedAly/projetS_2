@@ -81,8 +81,8 @@ include('includes/navbar.php');
                                      }
                                    ?>
                                   </select>
-                <?php
-             }
+                                  <?php
+                            }
              else
              {
                 echo "aucun service";

@@ -48,7 +48,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-user-md fa-3x text-gray-300"></i>
+                                            <i class="fas fa-user-md fa-3x text-gray-350"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                                 ?>
                                         </div>
                                         <div class="col-auto">
-                                            
+                                        <i class="fas fa-stethoscope  fa-3x text-gray-350"></i>
                                         </div>
                                     </div>
                                     
@@ -109,12 +109,12 @@
                                                 </div>
 
                                                 <div class="row no-gutters align-items-center">
-                                                    <div class="h3 mb-2 mr-3 font-weight-bold text-gray-800">salles</div>
+                                                
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <i class="fas fa-building fa-3x text-gray-350"></i>
                                         </div>
                                     </div>
                                 </div>
