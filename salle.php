@@ -117,7 +117,7 @@ include('includes/navbar.php');
       ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        
@@ -125,7 +125,7 @@ include('includes/navbar.php');
                     </tr>
                 </thead>
                 <tfoot>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $conn = mysqli_connect("localhost","root","","projet");
-
+//modifier register
 if (isset($_POST['btn_regis_modifier'])) {
 
     $id             = $_POST['modif_id'];
@@ -26,6 +26,36 @@ if (isset($_POST['btn_regis_modifier'])) {
 }
 
 
+//modifier infirmier
+
+if (isset($_POST['btn_infir_modifier'])) {
+    
+    //$numeroI         = $_POST['numeroI'];
+    $id           =$_POST['modif_id'];
+    $nom          = $_POST['nom'];
+    $prenom       = $_POST['prenom'];
+    $adresse      = $_POST['adresse'];
+    $numeroTele   = $_POST['numeroTele'];
+    $rotation     = $_POST['rotation'];
+    $salaire      = $_POST['salaire'];
+    $service      = $_POST['service '];
+
+
+    $quary = "UPDATE infirmier SET nom = '$nom' ,
+     prenom='$prenom',adresse='$adresse',numeroTele='$numeroTele',rotation='$rotation',
+     salaire='$salaire',service='$service' WHERE numeroI ='$id'";
+    $quary_run = mysqli_query($conn,$quary);
+
+    if ($quary_run) {
+        $_SESSION['success'] = "Les donnees sont modifiers";
+        header('Location:infirimiers.php');
+    }
+    else
+    {
+        $_SESSION['status'] = "Les donnees n'est pas modifiers";
+        header('Location:infirimiers.php'); 
+    }
+}
 
 
 ?>

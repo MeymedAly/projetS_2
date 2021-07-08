@@ -95,9 +95,9 @@ include('includes/navbar.php');
                           </form>
                         </td>
                         <td>
-                          <form action="reg_sup.php" method="POST">
-                            <input type="hidden" name="modif_in" value="<?php echo $row['numeroI'] ?>">
-                            <button type="submit" name="modif_btn" class="btn btn-success"><i class="fi fi-pencil-square"></i></button>
+                          <form action="infir_modifier.php" method="POST">
+                            <input type="hidden" name="modifier_input_infir" value="<?php echo $row['numeroI'] ?>">
+                            <button type="submit" name="modifier_btn_infir" class="btn btn-success"><i class="fi fi-pencil-square"></i></button>
                           </form>
                         </td>
                     </tr>
