@@ -102,15 +102,14 @@ include('includes/navbar.php');
                                      }
                                    ?>
                                   </select>
-                <?php
-             }
-             else
-             {
-                echo "aucun service";
-             }
-
-             ?>
-             </div>
+                                 <?php
+                                   }
+                                    else
+                                   {
+                                      echo "aucun service";
+                                   }
+                                   ?>
+                                   </div>
 
                                 </div>
                                 <!--  fin nom et prnom et numerolit -->
@@ -132,10 +131,40 @@ include('includes/navbar.php');
                                             id="rotation" placeholder="diagnostique">
                                     </div> 
 
-                                    <div class="col-sm-4">
+                                    <!--<div class="col-sm-4">
                                         <input type="number" name="numerolit"  class="form-control" id="prenom"
                                             placeholder="Numéro Lit">
-                                    </div>
+                                    </div>--> 
+                                    <?php
+                                        
+                                        $conn = mysqli_connect("localhost","root","","projet");
+                                        $num_service = "SELECT numeroS FROM service INNER JOIN salle ON service.nom = salle.service";
+                                        $num_service_run = mysqli_query($conn,$num_service);
+                                        $res = $num_service_run;
+                                        if (mysqli_num_rows($service_run) >0)
+                                         {
+                                       ?>
+                                    <div class="col-sm-4">
+                                       <select name="directeur" id="" placeholder="service" class="form-control">
+                                    <option value="">choisisser le numerolit</option>
+                                    <?php
+                                    foreach($num_service_run as $row)
+                                    {
+                                    ?>
+                                    <option value="<?php echo $row['numeroS'];?>"><?php echo $row['numeroS']; ?></option>
+                                   <?php
+                                     }
+                                   ?>
+                                  </select>
+                                 <?php
+                                   }
+                                    else
+                                   {
+                                      echo "aucun service";
+                                   }
+                                   ?>
+                                   </div>
+                                    
                                 </div>
 
 
