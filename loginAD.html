@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Login</title>
+
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+<div class="container p-3 col-md-4">
+<?php
+function SigneInForm(){
+	?>
+	 <div class="panel panel-default">
+    <div class="panel-heading">Login page</div>
+    <div class="panel-body">
+
+	<center>
+	<form method="post" action="loginAD.php" >
+	<center>
+	<br />
+	<div class="form-group">
+	<input type="text"  class="form-control"placeholder="email d'admin" name="email" />
+	</div>
+	<br />
+	<div class="form-group">
+	<input type="password"  class="form-control" placeholder="password" name="password"/>
+	
+	</div>
+	<br />	<br />
+	<br />
+	<div class="form-group">
+	<input type="submit" class="btn btn-primary" value="Login" />
+	</div>
+	</center>
+	<br/>
+	
+	</form>
+	</center>
+	<?php
+}
+if(isset($_SESSION['AdminId'])){
+	require_once('connect.php');
+$_command="select login from login where id =".$_SESSION['AdminId'];
+if ($admin =mysqli_query($con,$command)){
+
+}
+
+?>
+</body>
+</html>
