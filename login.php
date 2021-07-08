@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+   session_start();
+?>
 <head>
 
     <meta charset="utf-8">
@@ -40,27 +42,33 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Content de te revoir!</h1>
+                                        <?php
+                                        if (isset($_SESSION['status']) && $_SESSION['statua'] !='') {
+                                            echo  '<h2 class="bg-danger text-white"> '.$_SESSION['status'].'</h2>';
+                                            unset($_SESSION['status']);
+                                        }
+                                        ?>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="code.php" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Votre E-mail S.V.P...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Mot de passe">
+                                            <input type="password" name="pass" class="form-control form-control-user"
+                b                           id="exampleInputPassword" placeholder="Mot de passe">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <!--<label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>-->
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button href="code.php" type="submit" name="btn_login" class="btn btn-primary btn-user btn-block">
                                             Séconnecter
-                                        </a>
+                                        </button>
                                        
                                        
                                     </form>

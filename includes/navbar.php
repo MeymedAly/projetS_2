@@ -30,8 +30,7 @@
         <span>Les utilisateurs</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">les utilisateur</h6>
+        <div class="bg-white collapse-inner rounded">
             <a class="collapse-item" href="register.php">utilisateur</a>
         </div>
     </div>
@@ -73,7 +72,7 @@
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="malade.php">
+    <a class="nav-link" href="listeMalade.php">
         <i class="fas fa-fw fa-table"></i>
         <span>Les Malade</span></a>
 </li>

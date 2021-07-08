@@ -82,9 +82,9 @@ include('includes/navbar.php');
          $conn = mysqli_connect("localhost","root","","projet");
          $query= "SELECT * FROM utilisateur ";
          $query_run = mysqli_query($conn,$query);
-
+      if(mysqli_num_rows($query_run) > 0)
+        {
       ?>
-
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
@@ -97,13 +97,12 @@ include('includes/navbar.php');
         </thead>
         <tbody>
           <?php
-          if (mysqli_num_rows($query_run)>0) 
-          {
-               while ($row = mysqli_fetch_assoc($query_run))
+           while ($row = mysqli_fetch_assoc($query_run))
                 {
                  ?>
                  <tr>
             <td><?php echo $row['id'] ?></td>
+            <!--<td> foreach($query_run as $row) {echo $row['nom'];}?></td>-->
             <td><?php echo $row['nom'] ?></td>
             <td><?php echo $row['email'] ?></td>
             <td>
@@ -114,14 +113,15 @@ include('includes/navbar.php');
               </form>
             </td>
             <td>
-              <form align="center"  action="reg_sup.php" method="POST">
-                <input type="hidden" name="modif_in" value="<?php echo $row['id'] ?>">
-                <button type="submit" name="modif_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+              <form align="center"  action="reg_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input" value="<?php echo $row['id'] ?>">
+                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
               </form>
             </td>
           </tr>
           <?php
-               }
+                }
+              
           }
           else{
             echo "Pas d'enregistrement trouvé";

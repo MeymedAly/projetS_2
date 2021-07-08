@@ -47,10 +47,23 @@ if(isset($_POST['registerbtn']))
 
 
 
+if (isset($_POST['btn_login'])) {
+    $email_login = $_POST['email'];
+    $pass_login  = $_POST['pass'];
+
+    $query = "SELECT * FROM utilisateur WHERE email='$email_login' AND password='$pass_login'";
+    $query_run = mysqli_query($conn,$query);
 
 
-
-
+    if (mysqli_fetch_array($query_run)) {
+        $_SESSION['nom'] = $email_login;
+        header('Location:login.php');
+    }
+    else{
+        $_SESSION['status'] = 'email ou mot de passe incorrecte';
+        header('Location:login.php');
+    }
+}
 
 
 

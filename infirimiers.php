@@ -44,7 +44,7 @@ include('includes/navbar.php');
          $query_run = mysqli_query($conn,$query);
 
       ?>
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTable" width="60%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Numéro</th>
@@ -88,14 +88,14 @@ include('includes/navbar.php');
                         <td><?php echo $row['salaire'] ?></td>
                         <td><?php echo $row['service'] ?></td>
                         <td>
-                          <form align="center" title="Suprimer" action="sup.php" method="POST">
+                          <form title="Suprimer" action="sup.php" method="POST">
                             <input type="hidden" name="sup_infir" value="<?php echo $row['numeroI']?>">
                             <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
                             <button type="submit" name="sup_inf_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
                           </form>
                         </td>
                         <td>
-                          <form align="center"  action="reg_sup.php" method="POST">
+                          <form action="reg_sup.php" method="POST">
                             <input type="hidden" name="modif_in" value="<?php echo $row['numeroI'] ?>">
                             <button type="submit" name="modif_btn" class="btn btn-success"><i class="fi fi-pencil-square"></i></button>
                           </form>

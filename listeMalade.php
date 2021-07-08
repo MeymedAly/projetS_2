@@ -14,9 +14,9 @@ include('includes/navbar.php');
 <div class="container-fluid">
           <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                <a href="formDocteur.php"> 
+                <a href="malade.php"> 
                   <button type="button" class="btn btn-primary">
-                  Ajouter Docteur
+                  Ajouter Malade
                  </button>
                 </a>
                 </h6>
@@ -25,38 +25,44 @@ include('includes/navbar.php');
       <!-- DataTales Example -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Liste des docteurs</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Liste des malades</h6>
       
     </div>
     <div class="card-body">
         <div class="table-responsive">
         <?php
          $conn = mysqli_connect("localhost","root","","projet");
-         $query= "SELECT * FROM docteur ";
+         $query= "SELECT * FROM malade ";
          $query_run = mysqli_query($conn,$query);
 
       ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr align="center">
+                    <tr>
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Adresse</th>
-                        <th>Numéro Téléphone</th>
-                        <th>Spécialité</th>
-                        <th colspan="3">Action</th>
+                        <th>Téléphone</th>
+                        <th>Salle</th>
+                        <th>Lit</th>
+                        <th>Soigner Par</th>
+                        <th>Service</th>
+                        <th>diagnostic</th>
                     </tr>
                 </thead>
                 <tfoot>
-                    <tr align="center">
+                    <tr>
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Adresse</th>
-                        <th>Numéro Téléphone</th>
-                        <th>Spécialité</th>
-                        <th colspan="3">Action</th>
+                        <th>Téléphone</th>
+                        <th>Salle</th>
+                        <th>Lit</th>
+                        <th>Soigner Par</th>
+                        <th>Service</th>
+                        <th>diagnostic</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -67,31 +73,12 @@ include('includes/navbar.php');
                 {
                  ?>
                     <tr>
-                        <td><?php echo $row['numeroD'] ?></td>
+                        <td><?php echo $row['numeroM'] ?></td>
                         <td><?php echo $row['nom'] ?></td>
                         <td><?php echo $row['prenom'] ?></td>
                         <td><?php echo $row['adresse'] ?></td>
-                        <td><?php echo $row['NumeroTele'] ?></td>
-                        <td><?php echo $row['specialite'] ?></td>
-                        <td>
-              <form align="center" title="Suprimer" action="sup.php" method="POST">
-                <input type="hidden" name="sup_id" value="<?php echo $row['numeroD']?>">
-                <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
-              </form>
-            </td>
-            <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success btn-xs-xs"><i class="fa fa-pencil-square"></i></button>
-              </form>
-            </td>
-            <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-primary"><i class="bi bi-eye"></i></button>
-              </form>
-            </td>
+                        <td><?php echo $row['numeroTele'] ?></td>
+                        <td><?php echo $row['diagnostic'] ?></td>
                     </tr>
 
                     <?php

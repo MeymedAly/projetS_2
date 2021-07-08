@@ -121,7 +121,7 @@ include('includes/navbar.php');
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        
-                        <th>Action</th>
+                        <th colspan="2">Action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -129,7 +129,7 @@ include('includes/navbar.php');
                         <th>Numéro Salle</th>
                         <th>Nombre des Lits</th>
                         <th>Service</th>                        
-                        <th>Action </th>
+                        <th colspan="2">Action </th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -143,7 +143,19 @@ include('includes/navbar.php');
                         <td><?php echo $row['numeroS'] ?></td>
                         <td><?php echo $row['nombreLits'] ?></td>
                         <td><?php echo $row['service'] ?></td>
-                        <td><?php echo $row['service'] ?></td>
+                        <td>
+              <form align="center" title="Suprimer" action="sup.php" method="POST">
+                <input type="hidden" name="sup_id" value="<?php //echo $row['id']?>">
+                <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
+                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <form align="center"  action="reg_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input" value="<?php //echo $row['id'] ?>">
+                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+              </form>
+            </td>
                     </tr>
 
                     <?php
