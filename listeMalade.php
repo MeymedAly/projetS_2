@@ -34,6 +34,10 @@ include('includes/navbar.php');
          $conn = mysqli_connect("localhost","root","","projet");
          $query= "SELECT * FROM malade ";
          $query_run = mysqli_query($conn,$query);
+         $query2= "SELECT * FROM hospitaliser ";
+         $query_run2 = mysqli_query($conn,$query2);
+         $query3= "SELECT * FROM soigner ";
+         $query_run3 = mysqli_query($conn,$query3);
 
       ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -44,11 +48,11 @@ include('includes/navbar.php');
                         <th>Prénom</th>
                         <th>Adresse</th>
                         <th>Téléphone</th>
-                        <th>Salle</th>
+                        <th>diagnostic</th>
                         <th>Lit</th>
                         <th>Soigner Par</th>
                         <th>Service</th>
-                        <th>diagnostic</th>
+                        <th>Salle</th>                      
                     </tr>
                 </thead>
                 <tfoot>
@@ -58,18 +62,19 @@ include('includes/navbar.php');
                         <th>Prénom</th>
                         <th>Adresse</th>
                         <th>Téléphone</th>
-                        <th>Salle</th>
+                        <th>diagnostic</th>
                         <th>Lit</th>
                         <th>Soigner Par</th>
                         <th>Service</th>
-                        <th>diagnostic</th>
+                        <th>Salle</th>
+                        
                     </tr>
                 </tfoot>
                 <tbody>
                 <?php
           if (mysqli_num_rows($query_run)>0) 
           {
-               while ($row = mysqli_fetch_assoc($query_run))
+               while (($row = mysqli_fetch_assoc($query_run)) && ($row2 = mysqli_fetch_assoc($query_run2)) && ($row3 = mysqli_fetch_assoc($query_run3)))
                 {
                  ?>
                     <tr>
@@ -79,6 +84,10 @@ include('includes/navbar.php');
                         <td><?php echo $row['adresse'] ?></td>
                         <td><?php echo $row['numeroTele'] ?></td>
                         <td><?php echo $row['diagnostic'] ?></td>
+                        <th><?php echo $row2['numeroLit'] ?></th>        
+                        <th><?php echo $row3['numeroD'] ?></th>    
+                        <th><?php echo $row2['numeroS'] ?></th>
+                        <th>Salle</th>
                     </tr>
 
                     <?php

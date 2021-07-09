@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Login</title>
+<title>Connexion</title>
 
             <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,17 +12,17 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body >
-<div class="container p-3 col-md-4">
+<div class="container">
 <?php
 function SigneInForm(){
 	?>
 	 <div class="panel panel-default">
-    <div class="panel-heading">Login page</div>
+    <div class="panel-heading">Connexion page</div>
     <div class="panel-body">
 
-	<center>
-	<form method="post" action="loginAD.php" >
-	<center>
+	
+	<form method="post" action="loginAD.php">
+	
 	<br />
 	<div class="form-group">
 	<input type="text"  class="form-control"placeholder="email d'admin" name="email" />
@@ -34,23 +34,25 @@ function SigneInForm(){
 	</div>
 	<br />	<br />
 	<br />
-	<div class="form-group">
-	<input type="submit" class="btn btn-primary" value="Login" />
-	</div>
-	</center>
+	
+	<button type="submit" class="btn btn-primary">Connexion</button>
+	
+	
 	<br/>
 	
 	</form>
-	</center>
+	</div>
+	</div>
 	<?php
 }
 if(isset($_SESSION['AdminId'])){
 	require_once('connect.php');
-$_command="select login from login where id =".$_SESSION['AdminId'];
+$_command="select nom from nom where id =".$_SESSION['AdminId'];
 if ($admin =mysqli_query($con,$command)){
 
 }
 
 ?>
+</div>
 </body>
 </html>

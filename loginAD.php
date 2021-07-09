@@ -22,11 +22,11 @@ if (isset($_SESSION['AdminId'])){
 		echo ' invalid email adress';
 	}else{
 		require_once('conn.php');
-	$MAIL="select * from login where email='".$_POST["email"]."' and password='".$_POST["password"]."' limit 1";
+	$MAIL="select * from utilisateur where email='".$_POST["email"]."' and password='".$_POST["password"]."' limit 1";
 	if($get_admin=mysqli_query($con,$MAIL)){
 	if( mysqli_num_rows($get_admin)<=0){
 		echo' <center ><h2>Mauvais Emil ou mot de passe</h2>
-		<font color="red" ><input type="button" value="precedent" onclick="window.history.back()"/></font>
+		<font color="red" ><button type="button" onclick="window.history.back()">precedent</button></font>
 		</center>
 		
 		';
@@ -40,13 +40,13 @@ if (isset($_SESSION['AdminId'])){
 		<br />
 		
 		<?php
-		
-		echo' <font color="brown"><center><h1>Bienvenue Administrateur</h1></center></font>
+		header('Location:index.php');
+		/*echo' <font color="brown"><center><h1>Bienvenue Administrateur</h1></center></font>
 		<a href="index.php" ><h2><center>ADMINISTRATEUR</center></a>
 		</center>
 		<br/>
 		<br/><br/>
-		';
+		';*/
 		
 	}
 }else{

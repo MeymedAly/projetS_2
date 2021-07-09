@@ -21,11 +21,11 @@ include('includes/navbar.php');
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Ajouter un malade!</h1>
                             </div>
-                            <form class="user"  action="ajoutInfirimier.php" method="POST">
+                            <form class="user"  action="addMalade.php" method="POST">
                                <!--  debut numero et tele t salle -->
                                 <div class="form-group row">                                    
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="text" name="numeroI"  class="form-control" id="numero"
+                                        <input type="text" name="numeroM"  class="form-control" id="numero"
                                             placeholder="Numéro Malade">
                                     </div>
                                     <div class="col-sm-4">
@@ -41,7 +41,7 @@ include('includes/navbar.php');
                                          {
                                        ?>
                                     <div class="col-sm-4">
-                                       <select name="directeur" id="" placeholder="service" class="form-control">
+                                       <select name="service" id="" placeholder="service" class="form-control">
                                     <option value="">choisisser le service</option>
                                     <?php
                                     foreach($service_run as $row)
@@ -91,7 +91,7 @@ include('includes/navbar.php');
                                          {
                                        ?>
                                     <div class="col-sm-4">
-                                       <select name="directeur" id="" placeholder="service" class="form-control">
+                                       <select name="numeroSalle" id=""class="form-control">
                                     <option value="">choisisser le numeroSalle</option>
                                     <?php
                                     foreach($num_service_run as $row)
@@ -117,57 +117,27 @@ include('includes/navbar.php');
 
 
                                 <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="text" name="adresse"  class="form-control" id="adresse"
                                             placeholder="Adresse">
                                     </div>
-                                    <!--
-                                    <div class="col-sm-4">
-                                        <input type="text" name="soigner"  class="form-control"
-                                            id="soignerPar" placeholder="Soigner Par Dr.">
-                                    </div>-->
+    
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="text" name="diagnostique"  class="form-control"
                                             id="rotation" placeholder="diagnostique">
                                     </div> 
 
-                                    <!--<div class="col-sm-4">
-                                        <input type="number" name="numerolit"  class="form-control" id="prenom"
-                                            placeholder="Numéro Lit">
-                                    </div>--> 
-                                    <?php
-                                        
-                                        $conn = mysqli_connect("localhost","root","","projet");
-                                        $num_service = "SELECT numeroS FROM service INNER JOIN salle ON service.nom = salle.service";
-                                        $num_service_run = mysqli_query($conn,$num_service);
-                                        $res = $num_service_run;
-                                        if (mysqli_num_rows($service_run) >0)
-                                         {
-                                       ?>
                                     <div class="col-sm-4">
-                                       <select name="directeur" id="" placeholder="service" class="form-control">
-                                    <option value="">choisisser le numerolit</option>
-                                    <?php
-                                    foreach($num_service_run as $row)
-                                    {
-                                    ?>
-                                    <option value="<?php echo $row['numeroS'];?>"><?php echo $row['numeroS']; ?></option>
-                                   <?php
-                                     }
-                                   ?>
-                                  </select>
-                                 <?php
-                                   }
-                                    else
-                                   {
-                                      echo "aucun service";
-                                   }
-                                   ?>
-                                   </div>
-                                    
+                                        <select name="numerolit" id="" placeholder="service" class="form-control">
+                                        <option value="">choisisser le numerolit</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="2">3</option>
+                                        <option value="2">4</option>
+                                        <option value="2">5</option>
+                                        </select>
+                                    </div>                                 
                                 </div>
-
-
 
                                 <!--  debut Dr et prnom et numerolit -->
                                 <div class="form-group row"> 
@@ -202,7 +172,7 @@ include('includes/navbar.php');
                                     </div>     
 
  </div>
-            <button class="btn btn-primary " name="ajoutbtnIn">Ajouter</button>
+            <button class="btn btn-primary " name="ajoutbtnMalade">Ajouter</button>
                                
                             </form>   
                         </div>
