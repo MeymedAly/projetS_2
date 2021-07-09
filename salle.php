@@ -153,13 +153,13 @@ include('includes/navbar.php');
             <td>
               <form align="center"  action="salle_modifier.php" method="POST">
                 <input type="hidden" name="modifier_input_salle" value="<?php echo $row['numeroS'] ?>">
-                <button type="submit" name="modifier_btn_salle" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+                <button type="submit" name="modifier_btn_salle" class="btn btn-primary"><i class="fas fa-edit"></i></button>
               </form>
             </td>
             <td>
               <form align="center"  action="reg_modifier.php" method="POST">
                 <input type="hidden" name="modifier_input" value="<?php echo $row['numeroS'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
               </form>
             </td>
                     </tr>

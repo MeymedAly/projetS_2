@@ -46,7 +46,7 @@ include('includes/navbar.php');
       ?>
             <table class="table table-bordered" id="dataTable" width="60%" cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
@@ -55,11 +55,11 @@ include('includes/navbar.php');
                         <th>Rotation</th>
                         <th>Salaire</th>
                         <th>Service</th>
-                        <th colspan="2">Action</th>
+                        <th colspan="3">Action</th>
                     </tr>
                 </thead>
                 <tfoot>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
@@ -68,7 +68,7 @@ include('includes/navbar.php');
                         <th>Rotation</th>
                         <th>Salaire</th>
                         <th>Service</th>
-                        <th colspan="2">Action</th>
+                        <th colspan="3">Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -97,9 +97,17 @@ include('includes/navbar.php');
                         <td>
                           <form action="infir_modifier.php" method="POST">
                             <input type="hidden" name="modifier_input_infir" value="<?php echo $row['numeroI'] ?>">
-                            <button type="submit" name="modifier_btn_infir" class="btn btn-success"><i class="fi fi-pencil-square"></i></button>
+                            <button type="submit" name="modifier_btn_infir" class="btn btn-primary"><i class="fas fa-edit"></i></button>
                           </form>
                         </td>
+                        <td>
+                          <form action="infir_modifier.php" method="POST">
+                            <input type="hidden" name="modifier_input_infir" value="<?php echo $row['numeroI'] ?>">
+                            <button type="submit" name="modifier_btn_infir" class="btn btn-success btn-xs-xs"><i class="fas fa-edit"></i></button>
+                          </form>
+                        </td>
+                      
+                        
                     </tr>
 
                     <?php

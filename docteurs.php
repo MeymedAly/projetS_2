@@ -80,23 +80,18 @@ include('includes/navbar.php');
                 <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
+           
             <td>
               <form align="center"  action="reg_modifier.php" method="POST">
                 <input type="hidden" name="modifier_input" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier_bt" class="btn btn-success btn-xs-xs">     <i class="fa fa-plus-circle fw-fa"></i></button>
-              </form>
-            </td>
-            <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="l" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-primary"><i class="bi bi-eye"></i></button>
+                <button type="submit" name="modifier_btn" class="btn btn-primary"><i class="fas fa-edit"></i></button>
               </form>
             </td>
 			
-			 <td>
+			      <td>
               <form align="center"  action="view.php" method="POST">
                 <input type="hidden" name="v" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier" class="btn btn-success btn-xs-xs"><i class="fa fa-pencil-square"></i></button>
+                <button type="submit" name="modifier" class="btn btn-success btn-xs-xs"><i class="far fa-eye"></i></button>
               </form>
             </td> 
                     </tr>

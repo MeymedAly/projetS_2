@@ -42,7 +42,7 @@ include('includes/navbar.php');
       ?>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
@@ -52,11 +52,12 @@ include('includes/navbar.php');
                         <th>Lit</th>
                         <th>Soigner Par</th>
                         <th>Service</th>
-                        <th>Salle</th>                      
+                        <th>Salle</th> 
+                        <th colspan="3">Action</th>                     
                     </tr>
                 </thead>
                 <tfoot>
-                    <tr>
+                    <tr align="center">
                         <th>Numéro</th>
                         <th>Nom</th>
                         <th>Prénom</th>
@@ -67,6 +68,7 @@ include('includes/navbar.php');
                         <th>Soigner Par</th>
                         <th>Service</th>
                         <th>Salle</th>
+                        <th colspan="3">Action</th>
                         
                     </tr>
                 </tfoot>
@@ -88,6 +90,25 @@ include('includes/navbar.php');
                         <th><?php echo $row3['numeroD'] ?></th>    
                         <th><?php echo $row2['numeroS'] ?></th>
                         <th>Salle</th>
+                        <td>
+              <form align="center" title="Suprimer" action="sup.php" method="POST">
+                <input type="hidden" name="sup_id" value="<?php //echo $row['numeroS']?>">
+                <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
+                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <form align="center"  action="salle_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input_salle" value="<?php //echo $row['numeroS'] ?>">
+                <button type="submit" name="modifier_btn_salle" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+              </form>
+            </td>
+            <td>
+              <form align="center"  action="reg_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input" value="<?php //echo $row['numeroS'] ?>">
+                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
+              </form>
+            </td>
                     </tr>
 
                     <?php

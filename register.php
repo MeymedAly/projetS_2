@@ -87,12 +87,11 @@ include('includes/navbar.php');
       ?>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
-          <tr>
+          <tr align="center">
             <th> ID </th>
             <th> Nom </th>
             <th>E-mail </th>
-            <th>Suprimer</th>
-            <th>Modifiers</th>
+            <th colspan="3">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -109,13 +108,20 @@ include('includes/navbar.php');
               <form align="center" title="Suprimer" action="sup.php" method="POST">
                 <input type="hidden" name="sup_id" value="<?php echo $row['id']?>">
                 <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                <a type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
             <td>
               <form align="center"  action="reg_modifier.php" method="POST">
                 <input type="hidden" name="modifier_input" value="<?php echo $row['id'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="fi fi-pencil-square">modif</i></button>
+                <button type="submit" name="modifier_btn" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+              </form>
+              </td>
+
+              <td>
+              <form align="center"  action="reg_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input" value="<?php echo $row['id'] ?>">
+                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
               </form>
             </td>
           </tr>
