@@ -145,21 +145,21 @@ include('includes/navbar.php');
                         <td><?php echo $row['service'] ?></td>
                         <td>
               <form align="center" title="Suprimer" action="sup.php" method="POST">
-                <input type="hidden" name="sup_id" value="<?php echo $row['numeroS']?>">
+                <input type="hidden" name="sup_salle" value="<?php echo $row['numeroS']?>">
                 <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                <button type="submit" name="sup_btn_salle" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
             <td>
-              <form align="center"  action="salle_modifier.php" method="POST">
+              <form align="center"  title="modifier"  action="salle_modifier.php" method="POST">
                 <input type="hidden" name="modifier_input_salle" value="<?php echo $row['numeroS'] ?>">
                 <button type="submit" name="modifier_btn_salle" class="btn btn-primary"><i class="fas fa-edit"></i></button>
               </form>
             </td>
             <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php echo $row['numeroS'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
+              <form align="center" title="voir"  action="viewSalle.php" method="POST">
+                <input type="hidden" name="view_input_salle" value="<?php echo $row['numeroS'] ?>">
+                <button type="submit" name="view_btn_salle" class="btn btn-success"><i class="far fa-eye"></i></button>
               </form>
             </td>
                     </tr>
@@ -175,10 +175,15 @@ include('includes/navbar.php');
             </table>
         </div>
     </div>
+
+
+
+
+ 
 </div>
 
-
-
+<br/>
+<br/>
 
 
 

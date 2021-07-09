@@ -10,11 +10,11 @@ include('includes/navbar.php');
   ?>
   <?php
     $conn = mysqli_connect("localhost","root","","projet");
-	if (isset($_POST['voir_drocteur_btn'])) 
+	if (isset($_POST['view_btn_service'])) 
 	{
-		$id = $_POST['voir_drocteur_input'] ;
+		$id = $_POST['view_input_service'] ;
 
-		$query ="SELECT * FROM docteur WHERE numeroD = $id";
+		$query ="SELECT * FROM service WHERE code = $id";
 		$query_run = mysqli_query($conn,$query);
 
 		foreach($query_run as $row)
@@ -25,14 +25,15 @@ include('includes/navbar.php');
 <div class="container">
 <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                <a href="docteurs.php"> 
+                <a href="service.php"> 
 				<i class="fas fa-arrow-circle-left"></i>
                   retour
                 </a>
                 </h6>
           </div>
              <div class="mg-available-rooms">
-                    <h4 class="mg-sec-left-title text-primary">Information du docteur :  <?php echo $row['nom']?></h4>
+                 <br/><br/>
+                    <h4 class="mg-sec-left-title text-primary">Information du Service :  <?php echo $row['nom']?></h4>
                         <div class="mg-avl-rooms">
                             <div class="mg-avl-room">
                                 <div class="row">
@@ -42,17 +43,17 @@ include('includes/navbar.php');
                                     <div class="col-sm-10">
                                         <div style="border-bottom: 1px solid #ddd;padding: 10px;font-size: 25px;font-weight: bold;color: #000;margin-bottom: 5px;"><?php //echo $result->OCCUPATIONTITLE ;?> 
                                         </div> 
+                                        <br/>
                                         <div class="row contentbody">
                                             <div class="col-sm-6">
                                                 <ul>
-                                                    <li><i class="fp-ht-bed w-100"></i><h2>Numero : <?php echo $row['numeroD']?></h2></li>
-                                                    <li><i class="fp-ht-food w-100"></i><h2>Nom : <?php echo $row['nom']?></h2></li>
-
-                                                    <li><i class="fp-ht-food w-100"></i><h2>Prénom : <?php echo $row['prenom']?></h2></li>
-													<li><i class="fp-ht-food w-100"></i><h2>Spécialité :<?php echo $row['specialite']?></h2></li>
-													<li><i class="fp-ht-food"></i><h2>Numéro de Téléphone: <?php echo $row['NumeroTele']?><h2></li>
-													<li><i class="fp-ht-food"></i><h2>Adresse: <?php echo $row['adresse']?></h2></li>	
+                                                    <li><i class="fp-ht-bed w-100"></i><h2>CODE : <?php echo $row['code']?></h2></li>
+                                                    <li><i class="fp-ht-food w-100"></i><h2>NOM : <?php echo $row['nom']?></h2></li>
                                                 </ul>
+                                            </div>
+                                            <div class="col-sm-6">
+                                            <li><i class="fp-ht-bed"></i><h2>Batiment : <?php echo $row['batiment']?></h2></li>	
+                                            <li><i class="fp-ht-food"></i><h2>Directeur  : <?php echo $row['directeur']?></h2></li>	
                                             </div>
                                             
                                            

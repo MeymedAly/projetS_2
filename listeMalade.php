@@ -92,21 +92,21 @@ include('includes/navbar.php');
                         <th>Salle</th>
                         <td>
               <form align="center" title="Suprimer" action="sup.php" method="POST">
-                <input type="hidden" name="sup_id" value="<?php //echo $row['numeroS']?>">
+                <input type="hidden" name="sup_malade" value="<?php echo $row['numeroM']?>">
                 <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                <button type="submit" name="sup_malade_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
             <td>
-              <form align="center"  action="salle_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input_salle" value="<?php //echo $row['numeroS'] ?>">
-                <button type="submit" name="modifier_btn_salle" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+              <form align="center" title="Modifier"  action="malade_modifier.php" method="POST">
+                <input type="hidden" name="modifier_input_malade" value="<?php echo $row['numeroM'] ?>">
+                <button type="submit" name="modifier_btn_malade" class="btn btn-primary"><i class="fas fa-edit"></i></button>
               </form>
             </td>
             <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php //echo $row['numeroS'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
+              <form align="center" title="Voir"  action="viewMalade.php" method="POST">
+                <input type="hidden" name="voir_input_malade" value="<?php echo $row['numeroM'] ?>">
+                <button type="submit" name="voir_btn_malade" class="btn btn-success"><i class="far fa-eye"></i></button>
               </form>
             </td>
                     </tr>

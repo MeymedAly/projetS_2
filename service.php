@@ -176,21 +176,21 @@ include('includes/navbar.php');
                         <td><?php echo $row['directeur'] ?></td>
                         <td align="center">
                           <form title="Suprimer" action="sup.php" method="POST">
-                            <input type="hidden" name="sup_infir" value="<?php //echo $row['numeroI']?>">
+                            <input type="hidden" name="sup_service" value="<?php echo $row['code']?>">
                             <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                            <button type="submit" name="sup_inf_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                            <button type="submit" name="sup_service_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
                           </form>
                         </td>
                         <td align="center">
-                          <form action="infir_modifier.php" method="POST">
-                            <input type="hidden" name="modifier_input_infir" value="<?php //echo $row['numeroI'] ?>">
+                          <form title="modifier" action="infir_modifier.php" method="POST">
+                            <input type="hidden" name="modifier_input_infir" value="<?php echo $row['code'] ?>">
                             <button type="submit" name="modifier_btn_infir" class="btn btn-primary"><i class="fas fa-edit"></i></button>
                           </form>
                         </td>
                         <td align="center">
-                          <form action="infir_modifier.php" method="POST">
-                            <input type="hidden" name="modifier_input_infir" value="<?php //echo $row['numeroI'] ?>">
-                            <button type="submit" name="modifier_btn_infir" class="btn btn-success btn-xs-xs"><i class="fas fa-edit"></i></button>
+                          <form title="voir" action="viewService.php" method="POST">
+                            <input type="hidden" name="view_input_service" value="<?php echo $row['code'] ?>">
+                            <button type="submit" name="view_btn_service" class="btn btn-success btn-xs-xs"><i class="far fa-eye"></i></button>
                           </form>
                         </td>
                     </tr>

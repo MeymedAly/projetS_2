@@ -75,9 +75,9 @@ include('includes/navbar.php');
                         <td><?php echo $row['specialite'] ?></td>
                         <td>
               <form align="center" title="Suprimer" action="sup.php" method="POST">
-                <input type="hidden" name="sup_id" value="<?php echo $row['numeroD']?>">
+                <input type="hidden" name="sup_docteur" value="<?php echo $row['numeroD']?>">
                 <!--<button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs">Suprimer</button>-->
-                <button type="submit" name="sup_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
+                <button type="submit" name="sup_docteur_btn" class="btn btn-danger btn-xs-xs"><i class="fa fa-trash"></i></button>
               </form>
             </td>
            
@@ -90,8 +90,8 @@ include('includes/navbar.php');
 			
 			      <td>
               <form align="center"  action="view.php" method="POST">
-                <input type="hidden" name="v" value="<?php echo $row['numeroD'] ?>">
-                <button type="submit" name="modifier" class="btn btn-success btn-xs-xs"><i class="far fa-eye"></i></button>
+                <input type="hidden" name="voir_drocteur_input" value="<?php echo $row['numeroD'] ?>">
+                <button type="submit" name="voir_drocteur_btn" class="btn btn-success btn-xs-xs"><i class="far fa-eye"></i></button>
               </form>
             </td> 
                     </tr>

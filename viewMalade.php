@@ -10,12 +10,14 @@ include('includes/navbar.php');
   ?>
   <?php
     $conn = mysqli_connect("localhost","root","","projet");
-	if (isset($_POST['voir_drocteur_btn'])) 
+	if (isset($_POST['voir_btn_malade'])) 
 	{
-		$id = $_POST['voir_drocteur_input'] ;
+		$id = $_POST['voir_input_malade']; 
 
-		$query ="SELECT * FROM docteur WHERE numeroD = $id";
+		$query ="SELECT * FROM malade WHERE numeroM = $id";
 		$query_run = mysqli_query($conn,$query);
+        $query2 ="SELECT * FROM hospitaliser WHERE numeroM = $id";
+		$query_run2 = mysqli_query($conn,$query2);
 
 		foreach($query_run as $row)
 		{
@@ -25,14 +27,14 @@ include('includes/navbar.php');
 <div class="container">
 <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                <a href="docteurs.php"> 
+                <a href="listeMalade.php"> 
 				<i class="fas fa-arrow-circle-left"></i>
                   retour
                 </a>
                 </h6>
           </div>
              <div class="mg-available-rooms">
-                    <h4 class="mg-sec-left-title text-primary">Information du docteur :  <?php echo $row['nom']?></h4>
+                    <h4 class="mg-sec-left-title text-primary">Information du Malade :  <?php echo $row['nom']?></h4>
                         <div class="mg-avl-rooms">
                             <div class="mg-avl-room">
                                 <div class="row">
@@ -45,14 +47,16 @@ include('includes/navbar.php');
                                         <div class="row contentbody">
                                             <div class="col-sm-6">
                                                 <ul>
-                                                    <li><i class="fp-ht-bed w-100"></i><h2>Numero : <?php echo $row['numeroD']?></h2></li>
+                                                    <li><i class="fp-ht-bed w-100"></i><h2>Numero : <?php echo $row['numeroM']?></h2></li>
                                                     <li><i class="fp-ht-food w-100"></i><h2>Nom : <?php echo $row['nom']?></h2></li>
 
                                                     <li><i class="fp-ht-food w-100"></i><h2>Prénom : <?php echo $row['prenom']?></h2></li>
-													<li><i class="fp-ht-food w-100"></i><h2>Spécialité :<?php echo $row['specialite']?></h2></li>
-													<li><i class="fp-ht-food"></i><h2>Numéro de Téléphone: <?php echo $row['NumeroTele']?><h2></li>
-													<li><i class="fp-ht-food"></i><h2>Adresse: <?php echo $row['adresse']?></h2></li>	
+													<li><i class="fp-ht-food w-100"></i><h2>Adresse :<?php echo $row['adresse']?></h2></li>
+													<li><i class="fp-ht-food"></i><h2>Numéro de Téléphone: <?php echo $row['numeroTele']?><h2></li>	
                                                 </ul>
+                                            </div>
+                                            <div class="col-sm-6">
+                                            <li><i class="fp-ht-food"></i><h2>Diagnostic : <?php echo $row['diagnostic']?></h2></li>	
                                             </div>
                                             
                                            

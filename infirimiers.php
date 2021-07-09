@@ -101,9 +101,9 @@ include('includes/navbar.php');
                           </form>
                         </td>
                         <td>
-                          <form action="infir_modifier.php" method="POST">
-                            <input type="hidden" name="modifier_input_infir" value="<?php echo $row['numeroI'] ?>">
-                            <button type="submit" name="modifier_btn_infir" class="btn btn-success btn-xs-xs"><i class="fas fa-edit"></i></button>
+                          <form action="viewInfirmier" method="POST">
+                            <input type="hidden" name="view_input_infir" value="<?php echo $row['numeroI'] ?>">
+                            <button type="submit" name="view_btn_infir" class="btn btn-success btn-xs-xs"><i class="far fa-eye"></i></button>
                           </form>
                         </td>
                       
