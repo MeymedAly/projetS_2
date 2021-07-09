@@ -119,9 +119,9 @@ include('includes/navbar.php');
               </td>
 
               <td>
-              <form align="center"  action="reg_modifier.php" method="POST">
-                <input type="hidden" name="modifier_input" value="<?php echo $row['id'] ?>">
-                <button type="submit" name="modifier_btn" class="btn btn-success"><i class="far fa-eye"></i></button>
+              <form align="center"  action="viewUtilisateur.php" method="POST">
+                <input type="hidden" name="view_input_utilisateur" value="<?php echo $row['id'] ?>">
+                <button type="submit" name="view_btn_utilisateur" class="btn btn-success"><i class="far fa-eye"></i></button>
               </form>
             </td>
           </tr>
